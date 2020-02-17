@@ -1,56 +1,27 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-content class="text-justify">
+      <h1 class="display-1 py-6 font-weight-bold text-center">Funkcje w matematyce</h1>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-      <HelloWorld/>
+      <WhatIsAFunction id="WhatIsAFunction" />
+      <LinearFunction id="LinearFunction" />
+      <SquareFunction id="SquareFunction" />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import WhatIsAFunction from '@/components/WhatIsAFunction'
+import LinearFunction from '@/components/LinearFunction'
+import SquareFunction from '@/components/SquareFunction'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    WhatIsAFunction,
+    LinearFunction,
+    SquareFunction
   },
 
   data: () => ({
@@ -58,3 +29,10 @@ export default {
   }),
 };
 </script>
+
+<style>
+  #app {
+    background: url("./assets/paper.png");
+    background-repeat: repeat;
+  }
+</style>
