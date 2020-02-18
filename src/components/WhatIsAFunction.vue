@@ -14,11 +14,11 @@
       </div>
     </v-alert>
     <p>
-      Innymi słowy funkcją nazywamy przyporządkowanie każdemu elementowi pewnego zbioru dokładnie jednego elementu drugiego zbioru. Chyba najpopularniejszym przykładem zastosowania funkcji podawanym w szkole jest ten w którym to każdemu uczniowi przyporządkowywany jest unikatowy numer w dzienniku. Tak określone przypożądkowanie bedzie funkcją, ponieważ jednemu uczniowi przypisany jest jeden i <b>tylko jeden numer</b>. Przykładowo: gdybyśmy chcieli danemu uczniowi przypożądkować jego oceny z matematyki, to nie moglibyśmy tego nazwać funkcją ponieważ jedna osoba zazwyczaj posiada kilka ocen.
+      Innymi słowy funkcją nazywamy przyporządkowanie każdemu elementowi pewnego zbioru dokładnie jednego elementu drugiego zbioru. Chyba najpopularniejszym przykładem zastosowania funkcji podawanym w szkole jest ten w którym to każdemu uczniowi przyporządkowywany jest unikatowy numer w dzienniku. Tak określone przyporządkowanie będzie funkcją, ponieważ jednemu uczniowi przypisany jest jeden i <b>tylko jeden numer</b>. Przykładowo: gdybyśmy chcieli danemu uczniowi przyporządkować jego oceny z matematyki, to nie moglibyśmy tego nazwać funkcją ponieważ jedna osoba zazwyczaj posiada kilka ocen.
     </p>
     <v-alert border="left" colored-border color="red">
       <div class="title">
-        Mejsce zerowe
+        Miejsce zerowe
       </div>
       <div>
         Miejscem zerowym funkcji <b>y = f(x)</b> nazywamy taki argument <b>x</b>, dla którego <b>f(x) = 0</b>.
@@ -56,7 +56,7 @@
       </div>
     </v-alert>
     <p>
-      To właśnie od tej "reguły" zależy jakie nasza funkcja będzie przyjmowała wartości. Na jej podstawie wyróżniamy wiele rodzajów funkcji:
+      To właśnie od tej "reguły" zależy, jakie nasza funkcja będzie przyjmowała wartości. Na jej podstawie wyróżniamy wiele rodzajów funkcji, z których kilka przedstawię:
     </p>
     <v-row class="py-10" justify="center">
       <v-btn v-for="section in nav" :key="section.id" class="mx-2 mb-2" color="red" outlined @click="$vuetify.goTo(section.id)">

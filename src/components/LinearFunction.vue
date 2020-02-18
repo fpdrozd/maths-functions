@@ -12,18 +12,18 @@
     </v-alert>
     <!-- dziedzina -->
     <p>
-      Aby obliczyć wartość funkcji dla danego argumentu podstawiamy go do wzoru jako <b>x</b>. Przykładowo gdy mamy taką funkcję: <code>f(x) = 2x + 1</code> to dla argumentu równego <b>2</b> wyliczymy jej wartość w następujący sposób: <code>f(2) = 2*2 + 1 = 5</code>.
+      Aby obliczyć wartość funkcji dla danego argumentu, podstawiamy go do wzoru jako <b>x</b>. Przykładowo, gdy mamy taką funkcję: <code>f(x) = 2x + 1</code> to dla argumentu równego <b>2</b> wyliczymy jej wartość w następujący sposób: <code>f(2) = 2*2 + 1 = 5</code>.
     </p>
     <p>
-      Gdy chcielibyśmy narysować funkcję liniową, wystarczy że wyliczymy dowolne dwa punkty, zaznaczymy je na układzie współrzędnych, a następnie poprowadzimy linię prostą przechodzącą przez obydwa te punkty.
+      Gdy chcielibyśmy narysować funkcję liniową wystarczy, że wyliczymy dowolne dwa punkty, zaznaczymy je na układzie współrzędnych, a następnie poprowadzimy linię prostą przechodzącą przez obydwa te punkty.
     </p>
     <p>
-      Wartość funkcji dla argumentu <b>2</b> mamy już wyliczoną, policznmy zatem wartość dla argumentu <b>-2</b>, aby móc ją narysować: <code>f(-2) = 2*(-2) + 1 = -3</code>. Zatem nasza funkcja będzie prezentowała się następująco:
+      Wartość funkcji dla argumentu <b>2</b> mamy już wyliczoną, policzmy zatem wartość dla argumentu <b>-2</b>, aby móc ją narysować: <code>f(-2) = 2*(-2) + 1 = -3</code>. Zatem nasza funkcja będzie prezentowała się następująco:
     </p>
     <div class="ct-chart-11"></div>
     <div class="title pt-4">Współczynnik kierunkowy</div>
     <p>
-      Stała <b>a</b> nazywana jest również współczynnikiem kierunkowym, ponieważ od jej wartości zależy to w którym kierunku będzie biegł wykres funkcji. Przykładowo, gdy jest to liczba dodatnia to rosnący <b>x</b>, pomnożony przez nią będzie dawał rosnący wykres funkcji. Natomiast gdy współczynnik kierunkowy będzie ujemny, to zamieni nam znak iksa na przeciwny, tym samym sprawi, że wykres funkcji będzie malejący. Natomiast gdy pod <b>a</b> wstawimy zero, to otrzymamy tak zwaną funkcję stałą (jej wartość się nie zmienia).
+      Stała <b>a</b> nazywana jest również współczynnikiem kierunkowym, ponieważ od jej wartości zależy to, w którym kierunku będzie biegł wykres funkcji. Przykładowo, gdy jest to liczba dodatnia, to rosnący <b>x</b>, pomnożony przez nią będzie dawał rosnący wykres funkcji. Natomiast gdy współczynnik kierunkowy będzie ujemny, to zamieni nam znak iksa na przeciwny, tym samym sprawi, że wykres funkcji będzie malejący. Natomiast gdy pod <b>a</b> wstawimy zero, to otrzymamy tak zwaną funkcję stałą (jej wartość się nie zmienia).
     </p>
     <p>
       Możemy to sprowadzić do prostej zasady:
