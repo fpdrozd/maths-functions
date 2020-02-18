@@ -132,26 +132,45 @@
     <p>
       Zmodyfikuj parametry funkcji kwadratowej przesuwając suwakami i zobacz jak będzie ona wyglądała.
     </p>
-    <!-- <v-row> -->
-      <code>f(x) = {{ sliderA }}x<sup>2</sup> {{ ((sliderB >= 0) ? '+' : '-') }} {{ Math.abs(sliderB) }}x {{ ((sliderC >= 0) ? '+' : '-') }} {{ Math.abs(sliderC) }}</code>
-      <code>&#916; = ({{ sliderB }})<sup>2</sup> - 4*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }}*{{ (sliderC >= 0)? sliderC : `(${sliderC})` }} = {{ pgDelta }}</code>
-      <code v-if="pgDelta == 0">x<sub>0</sub> = -{{ (sliderB >= 0)? sliderB : `(${sliderB})` }}/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero1 }}</code>
-      <!-- {{ (((sliderA >= 0 && sliderB >= 0) || (sliderA < 0 && sliderB < 0))? '-' : '+') }} -->
-    <!-- </v-row> -->
     <v-row>
       <v-col cols="8">
         <div class="ct-chart-26"></div>
       </v-col>
       <v-col>
-        <div class="pa-4 mt-4">
-          <p class="text-center pb-10">
-            <code v-if="pgDelta >= 0">x<sub>1</sub> = (-{{ (sliderB >= 0)? sliderB : `(${sliderB})` }} - &#8730;{{ pgDelta }})/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero1 }}</code>
-            <code v-if="pgDelta >= 0">x<sub>2</sub> = (-{{ (sliderB >= 0)? sliderB : `(${sliderB})` }} + &#8730;{{ pgDelta }})/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero2 }}</code>
-          </p>
-          <v-slider class="pb-4 pt-10" color="red darken-2" track-color="red lighten-2" v-model="sliderA" thumb-label="always" label="a =" :min="-3" :max="3" :step="0.2"></v-slider>
-          <v-slider class="pb-4" color="red darken-2" track-color="red lighten-2" v-model="sliderB" thumb-label="always" label="b =" :min="-3" :max="3" :step="0.2"></v-slider>
-          <v-slider color="red darken-2" track-color="red lighten-2" v-model="sliderC" thumb-label="always" label="c =" :min="-3" :max="3" :step="0.2"></v-slider>
+        <div class="calculations pa-4 mt-4">
+          <div>
+            <code class="mb-8">f(x) = {{ sliderA }}x<sup>2</sup> {{ ((sliderB >= 0) ? '+' : '-') }} {{ Math.abs(sliderB) }}x {{ ((sliderC >= 0) ? '+' : '-') }} {{ Math.abs(sliderC) }}</code>
+          </div>
+          <div>
+            <code class="mb-4 orange--text">&#916; = ({{ sliderB }})<sup>2</sup> - 4*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }}*{{ (sliderC >= 0)? sliderC : `(${sliderC})` }} = {{ pgDelta }}</code>
+          </div>
+          <div>
+            <code class="mb-4 purple--text" v-if="sliderA != 0 && pgDelta == 0">x<sub>0</sub> = -{{ (sliderB >= 0)? sliderB : `(${sliderB})` }}/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero1 }}</code>
+          </div>
+          <div>
+            <code class="mb-4 purple--text" v-if="pgDelta > 0">x<sub>1</sub> = (-{{ (sliderB >= 0)? sliderB : `(${sliderB})` }} - &#8730;{{ pgDelta }})/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero1 }}</code>
+          </div>
+          <div>
+            <code class="mb-4 purple--text" v-if="pgDelta > 0">x<sub>2</sub> = (-{{ (sliderB >= 0)? sliderB : `(${sliderB})` }} + &#8730;{{ pgDelta }})/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero2 }}</code>
+          </div>
+          <div>
+            <code class="mb-4 green--text" v-if="sliderA != 0">p = (-{{ ((sliderB >= 0)? sliderB : `(${sliderB})`) }})/2*{{ ((sliderA >= 0)? sliderA : `(${sliderA})`) }} = {{ ((-sliderB)/(2*sliderA)).toFixed(2) }}</code>
+          </div>
+          <div>
+            <code class="mb-4 green--text" v-if="sliderA != 0">q = (-{{ ((pgDelta >= 0)? pgDelta : `(${pgDelta})`) }})/4*{{ ((sliderA >= 0)? sliderA : `(${sliderA})`) }} = {{ ((-pgDelta)/(4*sliderA)).toFixed(2) }}</code>
+          </div>
         </div>
+      </v-col>
+    </v-row>
+    <v-row class="pt-6">
+      <v-col cols="4">
+        <v-slider color="red darken-2" track-color="red lighten-2" v-model="sliderA" thumb-label="always" label="a =" :min="-6" :max="6" :step="0.2"></v-slider>
+      </v-col>
+      <v-col cols="4">
+        <v-slider color="red darken-2" track-color="red lighten-2" v-model="sliderB" thumb-label="always" label="b =" :min="-6" :max="6" :step="0.2"></v-slider>
+      </v-col>
+      <v-col cols="4">
+        <v-slider color="red darken-2" track-color="red lighten-2" v-model="sliderC" thumb-label="always" label="c =" :min="-3" :max="3" :step="0.2"></v-slider>
       </v-col>
     </v-row>
     <v-divider></v-divider>
@@ -168,6 +187,7 @@ export default {
     return {
       xs: Array.from(Array(21).keys()).map(x => x-10),
       xs11_7: Array.from(Array(11).keys()).map(x => x-7),
+      xsHalf: Array.from(Array(21).keys()).map(x => (x/4)-2.5),
       pgChart: null,
       sliderA: 0,
       sliderB: 0,
@@ -278,7 +298,7 @@ export default {
     },
     chart7() {
       this.pgChart = new Chartist.Line('.ct-chart-26', {
-        labels: this.xs,
+        labels: this.xsHalf,
         series: [{
           name: 'series-function',
           data: this.pgF
@@ -302,22 +322,22 @@ export default {
   },
   computed: {
     pgF() {
-      return this.xs.map(x => ({ x: x, y: this.square(x, this.sliderA, this.sliderB, this.sliderC)}));
+      return this.xsHalf.map(x => ({ x: x, y: this.square(x, this.sliderA, this.sliderB, this.sliderC)}));
     },
     pgDelta() {
       return (this.sliderB*this.sliderB - 4*this.sliderA*this.sliderC).toFixed(2);
     },
     pgZero1() {
-      return (((-this.sliderB)-Math.sqrt(this.pgDelta))/2*this.sliderA).toFixed(2);
+      return (((-this.sliderB)-Math.sqrt(this.pgDelta))/(2*this.sliderA)).toFixed(2);
     },
     pgZero2() {
-      return (((-this.sliderB)+Math.sqrt(this.pgDelta))/2*this.sliderA).toFixed(2);
+      return (((-this.sliderB)+Math.sqrt(this.pgDelta))/(2*this.sliderA)).toFixed(2);
     }
   },
   watch: {
     pgF() {
       this.pgChart.update({
-        labels: this.xs,
+        labels: this.xsHalf,
         series: [{
           name: 'series-function',
           data: this.pgF
@@ -349,5 +369,11 @@ export default {
 .ct-chart-23 .ct-series-b .ct-point,
 .ct-chart-24 .ct-series-b .ct-point {
   stroke: black;
+}
+
+.ct-chart-26 .ct-grids .ct-grid.ct-vertical:nth-child(32),
+.ct-chart-26 .ct-grids .ct-grid.ct-horizontal:nth-child(11) {
+  stroke: #000;
+  stroke-dasharray: 0px;
 }
 </style>

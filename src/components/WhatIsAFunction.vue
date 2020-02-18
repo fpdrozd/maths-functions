@@ -5,7 +5,6 @@
     <p>
       Funkcja to bardzo ważne i często spotykane pojęcie w matematyce. Jednak czym ona jest? Jakie wyróżniamy rodzaje funkcji? Jakie ma ona zastosowania? Niniejsza strona została stworzona, aby odpowiedzieć na te pytania. Zacznijmy jednak od definicji podręcznikowej:
     </p>
-    <!-- #faf7e4 -->
     <v-alert border="left" colored-border color="red">
       <div class="title">
         Definicja
@@ -84,9 +83,7 @@ export default {
     ],
     nav: [
       { title: 'Funkcja liniowa', id: '#LinearFunction' },
-      { title: 'Funkcja kwadratowa', id: '#SquareFunction' },
-      { title: 'Funkcja wykładnicza', id: '#dfgsdfg' },
-      { title: 'Funkcje trygonometryczne', id: '#dfgdfsdfg' }
+      { title: 'Funkcja kwadratowa', id: '#SquareFunction' }
     ]
   }),
   mounted() {
