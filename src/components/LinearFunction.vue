@@ -21,7 +21,7 @@
       Wartość funkcji dla argumentu <b>2</b> mamy już wyliczoną, policzmy zatem wartość dla argumentu <b>-2</b>, aby móc ją narysować: <code>f(-2) = 2*(-2) + 1 = -3</code>. Zatem nasza funkcja będzie prezentowała się następująco:
     </p>
     <div class="ct-chart-11"></div>
-    <div class="title pt-4">Współczynnik kierunkowy</div>
+    <h3 class="title pt-4">Współczynnik kierunkowy</h3>
     <p>
       Stała <b>a</b> nazywana jest również współczynnikiem kierunkowym, ponieważ od jej wartości zależy to, w którym kierunku będzie biegł wykres funkcji. Przykładowo, gdy jest to liczba dodatnia, to rosnący <b>x</b>, pomnożony przez nią będzie dawał rosnący wykres funkcji. Natomiast gdy współczynnik kierunkowy będzie ujemny, to zamieni nam znak iksa na przeciwny, tym samym sprawi, że wykres funkcji będzie malejący. Natomiast gdy pod <b>a</b> wstawimy zero, to otrzymamy tak zwaną funkcję stałą (jej wartość się nie zmienia).
     </p>
@@ -42,11 +42,11 @@
     <p>
       Możemy tu również łatwo zaobserwować, że im większa jest wartość bezwzględna z współczynnika kierunkowego tym kąt nachylenia wykresu funkcji jest większy.
     </p>
-    <div class="title pt-4">Współczynnik b</div>
+    <h3 class="title pt-4">Współczynnik b</h3>
     <p>
       Współczynnik b nazywany również wyrazem wolnym, jest miejscem w którym funkcja przecina oś <b>y</b>. Dla przykładu: jeśli wyraz wolny miałby wartość <b>b = 8</b>, to wiemy że nasza funkcja będzie przycinała oś <b>y</b> w miejscu <b>y = 8</b>. Z perspektywy rysowania wykresu funkcji, zmienna ta odpowiada za przesunięcie w pionie. Jeśli <b>b</b> jest dodatnie to przesuwa wykres funkcji "do góry", a gdy jest ujemne przesuwa ją "w dół".
     </p>
-    <div class="title pt-4">Miejsce zerowe</div>
+    <h3 class="title pt-4">Miejsce zerowe</h3>
     <p>
       Miejsce zerowe funkcji to argument dla którego funkcja przyjmuje wartość zero. Na wykresie funkcji będzie to miejsce w którym funkcja przecina oś <b>x</b> (czyli tam gdzie <b>y</b> jest równy zero).
     </p>
@@ -56,7 +56,7 @@
     <p>
       Drugim sposobem jest skożystanie ze wzoru: <code>x<sub>0</sub> = -(b/a)</code>. Po podstawieniu dostaniemy ten sam wynik: <code>x<sub>0</sub> = -(2/1) = -2</code>
     </p>
-    <div class="title pt-4">Plac zabaw</div>
+    <h3 class="title pt-4">Plac zabaw</h3>
     <p>
       Zmodyfikuj parametry funkcji liniowej przesuwając suwakami i zobacz jak będzie ona wyglądała.
     </p>
@@ -76,8 +76,20 @@
         </div>
       </v-col>
     </v-row>
-
-    <!-- Zastosowanie funkcji liniowej... -->
+    <h3 class="title pt-4">Zastosowanie funkcji liniowej</h3>
+    <p>
+      Zastanówmy się teraz do jakich celów można w praktyce wykorzystać funkcję liniową. Często przydają się one do dokonywania analizy przebiegu zjawisk w czasie. Możemy dzięki nim badać zależność między różnymi danymi, porównywać je ze sobą, a nawet na ich podstawie dokonywać prognozowania.
+    </p>
+    <p>
+      Weźmy na przykład firmę transportową, która swoje usługi wycenia między innymi na podstawie dystansu na jaki trzeba dany towar przewieźć. Cena usługi to suma stałych kosztów transportu oraz danej stawki za każdy przejechany kilometr. Taki sposób wyceniania można opisać przykładową funkcją: <code>f(x) = 4,15x + 500</code>, gdzie niewiadoma <b>x</b> to ilość kilometrów mnożona przez <b>4,15</b>, czyli cenę za kilometr, a <b>500</b> to stałe koszty przewozu. Ustalając taką funkcję, jesteśmy w stanie określić cenę dla każdego możliwego przewozu.
+    </p>
+    <p>
+      Innym przykładem może być firma produkująca ręcznie robione stroiki. Ponosi ona codzienne koszty (wypłaty pracowników, zakup materiałów, prąd potrzebny do działania linii produkcyjnej itp.). Możemy je opisać funkcją liniową <code class="purple--text">f(x) = x + 60</code>. Codziennie stroiki sprzedawane są w lokalnym sklepie, a poza tym prowadzony jest sklep internetowy. Zysk z każdego sprzedanego stroika można opisać funkcją: <code>f(x) = 3x</code>. Zobaczmy, jak będą one wyglądały:
+    </p>
+    <div class="ct-chart-13"></div>
+    <p>
+      Poprzez narysowanie wykresów obu tych funkcji i ich porównanie możemy wywnioskować, że aby dochód ze sprzedaży towaru pokrył koszty produkcji, należy sprzedać co najmniej 30 stroików dziennie (jest to miejsce w którym obie funkcje się przecinają).
+    </p>
     <v-divider></v-divider>
   </v-container>
 </template>
@@ -173,6 +185,26 @@ export default {
         }
       });
     },
+    chart4() {
+      const xs = Array.from(Array(50).keys());
+      const f1 = xs.map(x => this.linear(x, 3, 0));
+      const f2 = xs.map(x => this.linear(x, 1, 60));
+
+      new Chartist.Line('.ct-chart-13', {
+        labels: xs,
+        series: [{
+          name: 'f1',
+          data: f1
+        }, {
+          name: 'f2',
+          data: f2
+        }]
+      }, {
+        showPoint: false,
+        height: 300,
+        fullWidth: true
+      });
+    },
   },
   watch: {
     pgF() {
@@ -183,17 +215,13 @@ export default {
           data: this.pgF
         }]
       });
-
-      // {
-      //   name: 'series-zero',
-      //   data: [{ x: this.pgZero, y: 0 }]
-      // }
     }
   },
   mounted() {
     this.chart1();
     this.chart2();
     this.chart3();
+    this.chart4();
   }
 }
 </script>
@@ -220,5 +248,9 @@ export default {
 .ct-chart-12 .ct-grids .ct-grid.ct-horizontal:nth-child(6) {
   stroke: #000;
   stroke-dasharray: 0px;
+}
+
+.ct-chart-13 .ct-series-b .ct-line {
+  stroke: purple;
 }
 </style>

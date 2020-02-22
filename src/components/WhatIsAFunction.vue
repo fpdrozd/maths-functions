@@ -56,7 +56,7 @@
       </div>
     </v-alert>
     <p>
-      To właśnie od tej "reguły" zależy, jakie nasza funkcja będzie przyjmowała wartości. Na jej podstawie wyróżniamy wiele rodzajów funkcji, z których kilka przedstawię:
+      To właśnie od tej "reguły" zależy, jakie nasza funkcja będzie przyjmowała wartości. Na jej podstawie wyróżniamy wiele rodzajów funkcji, z których dwa najpopularniejsze przedstawię:
     </p>
     <v-row class="py-10" justify="center">
       <v-btn v-for="section in nav" :key="section.id" class="mx-2 mb-2" color="red" outlined @click="$vuetify.goTo(section.id)">
