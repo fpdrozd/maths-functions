@@ -145,19 +145,19 @@
             <code class="mb-4 orange--text" v-if="sliderA != 0">&#916; = ({{ sliderB }})<sup>2</sup> - 4*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }}*{{ (sliderC >= 0)? sliderC : `(${sliderC})` }} = {{ pgDelta }}</code>
           </div>
           <div>
-            <code class="mb-4 purple--text" v-if="sliderA != 0 && pgDelta == 0">x<sub>0</sub> = -{{ (sliderB >= 0)? sliderB : `(${sliderB})` }}/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero1 }}</code>
+            <code class="mb-4 purple--text" v-if="sliderA != 0 && pgDelta == 0">x<sub>0</sub> = -{{ (sliderB >= 0)? sliderB : `(${sliderB})` }}/(2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }}) = {{ pgZero1 }}</code>
           </div>
           <div>
-            <code class="mb-4 purple--text" v-if="pgDelta > 0 && sliderA != 0">x<sub>1</sub> = (-{{ (sliderB >= 0)? sliderB : `(${sliderB})` }} - &#8730;{{ pgDelta }})/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero1 }}</code>
+            <code class="mb-4 purple--text" v-if="pgDelta > 0 && sliderA != 0">x<sub>1</sub> = (-{{ (sliderB >= 0)? sliderB : `(${sliderB})` }} - &#8730;{{ pgDelta }})/(2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }}) = {{ pgZero1 }}</code>
           </div>
           <div>
-            <code class="mb-4 purple--text" v-if="pgDelta > 0 && sliderA != 0">x<sub>2</sub> = (-{{ (sliderB >= 0)? sliderB : `(${sliderB})` }} + &#8730;{{ pgDelta }})/2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }} = {{ pgZero2 }}</code>
+            <code class="mb-4 purple--text" v-if="pgDelta > 0 && sliderA != 0">x<sub>2</sub> = (-{{ (sliderB >= 0)? sliderB : `(${sliderB})` }} + &#8730;{{ pgDelta }})/(2*{{ (sliderA >= 0)? sliderA : `(${sliderA})` }}) = {{ pgZero2 }}</code>
           </div>
           <div>
-            <code class="mb-4 green--text" v-if="sliderA != 0">p = (-{{ ((sliderB >= 0)? sliderB : `(${sliderB})`) }})/2*{{ ((sliderA >= 0)? sliderA : `(${sliderA})`) }} = {{ ((-sliderB)/(2*sliderA)).toFixed(2) }}</code>
+            <code class="mb-4 green--text" v-if="sliderA != 0">p = (-{{ ((sliderB >= 0)? sliderB : `(${sliderB})`) }})/(2*{{ ((sliderA >= 0)? sliderA : `(${sliderA})`) }}) = {{ ((-sliderB)/(2*sliderA)).toFixed(2) }}</code>
           </div>
           <div>
-            <code class="mb-4 green--text" v-if="sliderA != 0">q = (-{{ ((pgDelta >= 0)? pgDelta : `(${pgDelta})`) }})/4*{{ ((sliderA >= 0)? sliderA : `(${sliderA})`) }} = {{ ((-pgDelta)/(4*sliderA)).toFixed(2) }}</code>
+            <code class="mb-4 green--text" v-if="sliderA != 0">q = (-{{ ((pgDelta >= 0)? pgDelta : `(${pgDelta})`) }})/(4*{{ ((sliderA >= 0)? sliderA : `(${sliderA})`) }}) = {{ ((-pgDelta)/(4*sliderA)).toFixed(2) }}</code>
           </div>
         </div>
       </v-col>
@@ -184,11 +184,11 @@
       Rozwiążmy to zadanie. Zysk ze sprzedaży jednej kurtki możemy opisać jako <code>20 + 10x</code>, gdzie <b>20</b> oznacza aktualny zysk (<b>&lt;cena kurtki&gt; - &lt;koszt wyprodukowania&gt;</b>), a <b>x</b> to liczba podwyżek ceny o 10 zł. Musimy teraz ten zysk pomnożyć przez liczbę sprzedanych kurtek. Wiemy jednak, że ona również jest zależna od ilości podwyżek. Zapiszemy to więc w następujący sposób: <code>100 - 5x</code>, gdzie <b>100</b> oznacza aktualną liczbę miesięcznie sprzedawanych kurtek, a <b>5x</b> to spadek sprzedaży o 5 sztuk przy każdej podwyżce, który odejmujemy.
     </p>
     <p>
-      Zatem funkcja opisująca miesięczny zysk będzie wyglądała następująco: <code>f(x) = (20 + 10x)(100 - 5x)</code>. Po wymnożeniu nawiasów otrzymamy ją w postaci ogólnej: <code>f(x) = -50x<sup>2</sup> + 900x + 200</code>. Największą wartością tej funkcji jest miejsce, w którym znajduje się jej wierzchołek. Możemy zatem wyliczyć jego parametry w znany nam już sposób: <code class="orange--text">&#916; = 900<sup>2</sup> - 4*(-50)*200 = 850000</code>, <code class="green--text">p = (-900)/2*(-50) = 9</code>, <code class="green--text">q = (-850000)/4*(-50) = 4250</code>
+      Zatem funkcja opisująca miesięczny zysk będzie wyglądała następująco: <code>f(x) = (20 + 10x)(100 - 5x)</code>. Po wymnożeniu nawiasów otrzymamy ją w postaci ogólnej: <code>f(x) = -50x<sup>2</sup> + 900x + 2000</code>. Największą wartością tej funkcji jest miejsce, w którym znajduje się jej wierzchołek. Możemy zatem wyliczyć jego parametry w znany nam już sposób: <code class="orange--text">&#916; = 900<sup>2</sup> - 4*(-50)*2000 = 1210000</code>, <code class="green--text">p = (-900)/(2*(-50)) = 9</code>, <code class="green--text">q = (-1210000)/(4*(-50)) = 6050</code>
     </p>
     <div class="ct-chart-27"></div>
     <p>
-      Wiemy zatem, że największy miesięczny zysk możliwy do uzyskania to <b>4250 zł</b>, który osiągniemy, podnosząc cenę kurtki <b>9 razy</b> o 10 zł, czyli o <b>90 zł</b>. W związku z tym nowa cena kurtki będzie wynosiła <b>190 zł</b>, co swoją drogą jest niezłym interesem.
+      Wiemy zatem, że największy miesięczny zysk możliwy do uzyskania to <b>6050 zł</b>, który osiągniemy, podnosząc cenę kurtki <b>9 razy</b> o 10 zł, czyli o <b>90 zł</b>. W związku z tym nowa cena kurtki będzie wynosiła <b>190 zł</b>, co swoją drogą jest niezłym interesem.
     </p>
     <v-divider></v-divider>
   </v-container>
@@ -336,8 +336,8 @@ export default {
     },
     chart8() {
       const xs = Array.from(Array(26).keys()).map(x => (x-4));
-      const f1 = xs.map(x => this.square(x, -50, 900, 200));
-      const f2 = xs.map(x => (x == 9)? this.square(x, -50, 900, 200) : null);
+      const f1 = xs.map(x => this.square(x, -50, 900, 2000));
+      const f2 = xs.map(x => (x == 9)? this.square(x, -50, 900, 2000) : null);
 
       new Chartist.Line('.ct-chart-27', {
         labels: xs,

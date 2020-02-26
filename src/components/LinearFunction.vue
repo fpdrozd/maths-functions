@@ -44,7 +44,7 @@
     </p>
     <h3 class="title pt-4">Współczynnik b</h3>
     <p>
-      Współczynnik b nazywany również wyrazem wolnym, jest miejscem w którym funkcja przecina oś <b>y</b>. Dla przykładu: jeśli wyraz wolny miałby wartość <b>b = 8</b>, to wiemy że nasza funkcja będzie przycinała oś <b>y</b> w miejscu <b>y = 8</b>. Z perspektywy rysowania wykresu funkcji, zmienna ta odpowiada za przesunięcie w pionie. Jeśli <b>b</b> jest dodatnie to przesuwa wykres funkcji "do góry", a gdy jest ujemne przesuwa ją "w dół".
+      Współczynnik b nazywany również wyrazem wolnym, jest miejscem w którym funkcja przecina oś <b>y</b>. Dla przykładu: jeśli wyraz wolny miałby wartość <b>b = 8</b>, to wiemy że nasza funkcja będzie przecinała oś <b>y</b> w miejscu <b>y = 8</b>. Z perspektywy rysowania wykresu funkcji, zmienna ta odpowiada za przesunięcie w pionie. Jeśli <b>b</b> jest dodatnie to przesuwa wykres funkcji "do góry", a gdy jest ujemne przesuwa ją "w dół".
     </p>
     <h3 class="title pt-4">Miejsce zerowe</h3>
     <p>
