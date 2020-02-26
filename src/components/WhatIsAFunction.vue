@@ -21,7 +21,7 @@
         Miejsce zerowe
       </div>
       <div>
-        Miejscem zerowym funkcji <b>y = f(x)</b> nazywamy taki argument <b>x</b>, dla którego <b>f(x) = 0</b>.
+        Miejscem zerowym funkcji <b>y = f(x)</b> nazywamy taki argument <b>x</b> należący do jej dziedziny, dla którego <b>f(x) = 0</b>.
       </div>
     </v-alert>
     <p>
