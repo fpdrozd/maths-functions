@@ -18,9 +18,9 @@
       Wykresem funkcji kwadratowej jest parabola. Poniżej przedstawiony jest wykres funkcji <code>f(x) = x<sup>2</sup></code>:
     </p>
     <div class="ct-chart-20"></div>
-    <h3 class="title pt-4">Współczynnik kierunkowy</h3>
+    <h3 class="title pt-4">Współczynnik a</h3>
     <p>
-      W funkcji kwadratowej tak jak w funkcji liniowej występuje stała <b>a</b>, również zwana współczynnikiem kierunkowym. Decyduje on o tym, czy ramiona paraboli będą skierowane do góry, czy do dołu.
+      W funkcji kwadratowej występuje stała <b>a</b>, która jest odpowiednikiem współczynnika kierunkowego w funkcji liniowej. Decyduje ona o tym, czy ramiona paraboli będą skierowane do góry, czy do dołu.
     </p>
     <v-alert border="left" colored-border color="red">
       <div>
