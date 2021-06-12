@@ -1,9 +1,5 @@
 <template>
   <v-container>
-    <h2 class="headline pb-4">O stronie</h2>
-    <p>
-      Strona została stworzona jako praca konkursowa w konkursie <b>"Zobaczyć matematykę"</b> organizowanym przez Akademię Górniczo-Hutniczą im. Stanisława Staszica w Krakowie. Stronę wykonał <b>Filip Drozd</b>. Do poprawnego jej działania wymagane jest połączenie z internetem.
-    </p>
     <v-row align="center">
       <div class="title ml-3 pr-4">Użyte technologie: </div>
       <v-btn small depressed v-for="tech in techs" :key="tech.name" :color="tech.color" :href="tech.link" class="white--text mr-2">{{ tech.name }}</v-btn>

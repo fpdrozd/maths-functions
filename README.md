@@ -1,4 +1,4 @@
-# aghwebmath
+# mathsfunctions
 
 ## Project setup
 ```
